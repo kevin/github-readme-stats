@@ -1,24 +1,6 @@
 const { kFormatter, isValidHexColor } = require("../src/utils");
 const getStyles = require("./getStyles");
 
-const createTextNode = ({ icon, label, value, id, index, lineHeight }) => {
-  const classname = icon === "★" && "star-icon";
-  const kValue = kFormatter(value);
-  const staggerDelay = (index + 3) * 150;
-  // manually calculating lineHeight based on index instead of using <tspan dy="" />
-  // to fix firefox layout bug
-  const lheight = lineHeight * (index + 1);
-  return `
-    <text class="stagger" style="animation-delay: ${staggerDelay}ms" x="25" y="${lheight}">
-      <tspan dx="0" data-testid="icon" class="icon ${classname}">${icon}</tspan>   
-      <tspan dx="0" class="stat bold">
-       ${label}:
-      </tspan>
-      <tspan x="160" data-testid="${id}" class="stat">${kValue}</tspan>
-    </text>
-  `;
-};
-
 const renderStatsCard = (stats = {}, options = { hide: [] }) => {
   const {
     name,

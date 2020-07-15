@@ -65,19 +65,19 @@ const renderStatsCard = (stats = {}, options = { hide: [] }) => {
     },
   };
 
-  const statItems = Object.keys(STATS)
+  /*const statItems = Object.keys(STATS)
     .filter((key) => !hide.includes(key))
     .map((key, index) =>
       // create the text nodes, and pass index so that we can calculate the line spacing
       //createTextNode({ ...STATS[key], index, lineHeight: lheight })
-    );
+    );*/
 
   // Calculate the card height depending on how many items there are
   // but if rank circle is visible clamp the minimum height to `150`
-  const height = Math.max(
+  const height = /*Math.max(
     45 + (statItems.length + 1) * lheight,
     hide_rank ? 0 : 150
-  );
+  );*/400;
 
   const border = `
     <rect 
@@ -92,34 +92,6 @@ const renderStatsCard = (stats = {}, options = { hide: [] }) => {
     />
   `;
 
-  const rankCircle = hide_rank
-    ? ""
-    : `<g data-testid="rank-circle" transform="translate(400, ${
-        height / 1.85
-      })">
-        <circle class="rank-circle-rim" cx="-10" cy="8" r="40" />
-        <circle class="rank-circle" cx="-10" cy="8" r="40" />
-        <text
-          x="0"
-          y="0"
-          alignment-baseline="central"
-          dominant-baseline="central"
-          text-anchor="middle"
-          class="rank-text"
-        >
-          ${rank.level}
-        </text>
-      </g>`;
-
-  // re-adjust circle progressbar's value until the ranking algo is improved
-  let progress = rank.score;
-  if (rank.score > 86) {
-    progress = (40 + rank.score) * 0.6;
-  }
-  if (rank.score < 40) {
-    progress = 40 + rank.score;
-  }
-
   const styles = getStyles({
     titleColor,
     textColor,
@@ -128,15 +100,13 @@ const renderStatsCard = (stats = {}, options = { hide: [] }) => {
     progress,
   });
 
-  return `
+  /*return `
     <svg width="495" height="${height}" viewBox="0 0 495 ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
       <style>
         ${styles}
       </style>
       
       ${hide_border ? "" : border}
-
-      ${rankCircle}
       
       <text x="25" y="35" class="header">${name}'s GitHub Stats</text>
 
@@ -144,7 +114,24 @@ const renderStatsCard = (stats = {}, options = { hide: [] }) => {
         ${statItems.toString().replace(/\,/gm, "")}
       </svg>
     </svg>
+  `;*/
+
+  return `
+    <svg width="495" height="${height}" viewBox="0 0 495 ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <style>
+        ${styles}
+      </style>
+      
+      ${hide_border ? "" : border}
+      
+      <text x="25" y="35" class="header">${name}'s GitHub Stats</text>
+
+      <svg x="0" y="45">
+        test
+      </svg>
+    </svg>
   `;
+
 };
 
 module.exports = renderStatsCard;

@@ -4,10 +4,8 @@ const renderStatsCard = require("../src/renderStatsCard");
 module.exports = async (req, res) => {
   const {
     username,
-    hide,
+    languages,
     hide_border,
-    hide_rank,
-    show_icons,
     line_height,
     title_color,
     icon_color,
@@ -18,14 +16,14 @@ module.exports = async (req, res) => {
 
   res.setHeader("Content-Type", "image/svg+xml");
   try {
-    stats = await {};
+    stats = {username};
   } catch (err) {
     return res.send(renderError(err.message));
   }
 
   res.send(
     renderStatsCard(stats, {
-      hide: JSON.parse(hide || "[]"),
+      languages: JSON.parse(languages || "[]"),
       show_icons,
       hide_border,
       hide_rank,

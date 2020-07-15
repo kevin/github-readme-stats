@@ -1,7 +1,7 @@
 const { kFormatter, isValidHexColor } = require("../src/utils");
 const getStyles = require("./getStyles");
 
-const renderStatsCard = (stats = {}, options = { hide: [] }) => {
+const renderStatsCard = (stats = {}, options = { languages: [] }) => {
   const {
     name,
     totalStars,
@@ -12,7 +12,7 @@ const renderStatsCard = (stats = {}, options = { hide: [] }) => {
     rank,
   } = stats;
   const {
-    hide = [],
+    languages = [],
     show_icons = false,
     hide_border = false,
     hide_rank = false,
@@ -69,7 +69,7 @@ const renderStatsCard = (stats = {}, options = { hide: [] }) => {
     .filter((key) => !hide.includes(key))
     .map((key, index) =>
       // create the text nodes, and pass index so that we can calculate the line spacing
-      //createTextNode({ ...STATS[key], index, lineHeight: lheight })
+      createTextNode({ ...STATS[key], index, lineHeight: lheight })
     );*/
 
   // Calculate the card height depending on how many items there are
@@ -84,7 +84,7 @@ const renderStatsCard = (stats = {}, options = { hide: [] }) => {
       data-testid="card-border"
       x="0.5"
       y="0.5"
-      width="494"
+      width="851"
       height="99%"
       rx="4.5"
       fill="${bgColor}"
@@ -116,7 +116,7 @@ const renderStatsCard = (stats = {}, options = { hide: [] }) => {
   `;*/
 
   return `
-    <svg width="495" height="${height}" viewBox="0 0 495 ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="852" height="${height}" viewBox="0 0 495 ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
       <style>
         ${styles}
       </style>

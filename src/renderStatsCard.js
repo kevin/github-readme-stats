@@ -69,7 +69,7 @@ const renderStatsCard = (stats = {}, options = { hide: [] }) => {
     .filter((key) => !hide.includes(key))
     .map((key, index) =>
       // create the text nodes, and pass index so that we can calculate the line spacing
-      createTextNode({ ...STATS[key], index, lineHeight: lheight })
+      //createTextNode({ ...STATS[key], index, lineHeight: lheight })
     );
 
   // Calculate the card height depending on how many items there are

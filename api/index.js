@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
 
   res.setHeader("Content-Type", "image/svg+xml");
   try {
-    stats = await fetchStats(username);
+    stats = await {};
   } catch (err) {
     return res.send(renderError(err.message));
   }

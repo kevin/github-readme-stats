@@ -1,4 +1,3 @@
-require("dotenv").config();
 const { renderError } = require("../src/utils");
 const renderStatsCard = require("../src/renderStatsCard");
 

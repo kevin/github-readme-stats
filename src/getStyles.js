@@ -1,4 +1,4 @@
-const getAnimations = ({ progress }) => {
+const getAnimations = () => {
   return `
     /* Animations */
     @keyframes scaleIn {
@@ -24,8 +24,7 @@ const getStyles = ({
   titleColor,
   textColor,
   iconColor,
-  show_icons,
-  progress,
+  show_icons
 }) => {
   return `
     .header {
@@ -71,7 +70,7 @@ const getStyles = ({
       animation: rankAnimation 1s forwards ease-in-out;
     }
 
-    ${process.env.NODE_ENV === "test" ? "" : getAnimations({ progress })}
+    ${process.env.NODE_ENV === "test" ? "" : getAnimations()}
   `;
 };
 

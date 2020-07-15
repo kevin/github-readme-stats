@@ -97,7 +97,6 @@ const renderStatsCard = (stats = {}, options = { hide: [] }) => {
     textColor,
     iconColor,
     show_icons,
-    progress,
   });
 
   /*return `

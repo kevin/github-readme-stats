@@ -13,9 +13,7 @@ const renderStatsCard = (stats = {}, options = { languages: [] }) => {
   } = stats;
   const {
     languages = [],
-    show_icons = false,
     hide_border = false,
-    hide_rank = false,
     line_height = 25,
     title_color,
     icon_color,
@@ -96,7 +94,6 @@ const renderStatsCard = (stats = {}, options = { languages: [] }) => {
     titleColor,
     textColor,
     iconColor,
-    show_icons,
   });
 
   /*return `

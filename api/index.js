@@ -24,9 +24,7 @@ module.exports = async (req, res) => {
   res.send(
     renderStatsCard(stats, {
       languages: JSON.parse(languages || "[]"),
-      show_icons,
       hide_border,
-      hide_rank,
       line_height,
       title_color,
       icon_color,

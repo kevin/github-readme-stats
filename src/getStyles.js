@@ -30,7 +30,7 @@ const getStyles = ({
       font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif; fill: ${titleColor}; 
       animation: fadeIn 0.8s ease-in-out forwards;
     }
-    .stat { 
+    .text { 
       font: 600 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: ${textColor};
     }
     .stagger {

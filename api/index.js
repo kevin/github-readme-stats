@@ -24,7 +24,7 @@ module.exports = async (req, res) => {
 
         var events = JSON.parse(body);
 
-        if (events.message === "Not Found")
+        if (events.message === "Not Found") // i dont think this works properly to block invaild usernames
           return res.send(renderError(err.message));
 
         var lastPushEvent;

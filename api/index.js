@@ -14,12 +14,11 @@ module.exports = async (req, res) => {
     text_color,
     bg_color,
   } = req.query;
-  let info;
+  let info = {name: "", message: "", repo: ""};
   info.name = username;
 
   res.setHeader("Content-Type", "image/svg+xml");
   try {
-    info = {name: "", message: "", repo: ""}
     await request({url: "https://api.github.com/users/" + username + "/events/public", headers: {"User-Agent": "request"}}, function(error, resp, body) {
       if (!error && resp.statusCode == 200) {
 

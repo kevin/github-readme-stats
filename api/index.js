@@ -23,6 +23,10 @@ module.exports = async (req, res) => {
       if (!error && resp.statusCode == 200) {
 
         var events = JSON.parse(body);
+
+        if (events.message === "Not Found")
+          return res.send(renderError(err.message));
+
         var lastPushEvent;
         for (let i = 0; i < events.length; i++) {
           if (events[i].type === "PushEvent") {
@@ -34,8 +38,6 @@ module.exports = async (req, res) => {
         info.message = lastPushEvent.payload.commits[lastPushEvent.payload.commits.length - 1].message;
         info.repo = lastPushEvent.repo.name;
 
-      } else {
-        return res.send(renderError(err.message));
       }
     });
   } catch (err) {

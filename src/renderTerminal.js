@@ -118,10 +118,6 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
       
       <text x="25" y="35" class="header">${name}@GitHub</text>
       <text x="25" y="35" class="header">${message}</text>
-
-      <svg x="0" y="45">
-        test
-      </svg>
     </svg>
   `;
 

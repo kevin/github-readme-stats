@@ -1,5 +1,5 @@
 const { renderError } = require("../src/utils");
-const renderStatsCard = require("../src/renderStatsCard");
+const renderTerminal = require("../src/renderTerminal");
 
 const request = require("request");
 
@@ -42,7 +42,7 @@ module.exports = async (req, res) => {
   }
 
   res.send(
-    renderStatsCard(info, {
+    renderTerminal(info, {
       languages: JSON.parse(languages || "[]"),
       hide_border,
       line_height,

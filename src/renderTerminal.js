@@ -1,7 +1,7 @@
-const { kFormatter, isValidHexColor } = require("../src/utils");
+const { kFormatter, isValidHexColor } = require("./utils");
 const getStyles = require("./getStyles");
 
-const renderStatsCard = (info = {}, options = { languages: [] }) => {
+const renderTerminal = (info = {}, options = { languages: [] }) => {
   const {
     name,
     message,
@@ -78,7 +78,7 @@ const renderStatsCard = (info = {}, options = { languages: [] }) => {
       data-testid="card-border"
       x="0.5"
       y="0.5"
-      width="851"
+      width="852"
       height="99%"
       rx="4.5"
       fill="${bgColor}"
@@ -109,7 +109,7 @@ const renderStatsCard = (info = {}, options = { languages: [] }) => {
   `;*/
 
   return `
-    <svg width="852" height="${height}" viewBox="0 0 495 ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="852" height="${height}" viewBox="0 0 852 ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
       <style>
         ${styles}
       </style>
@@ -126,4 +126,4 @@ const renderStatsCard = (info = {}, options = { languages: [] }) => {
 
 };
 
-module.exports = renderStatsCard;
+module.exports = renderTerminal;

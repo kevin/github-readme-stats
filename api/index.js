@@ -15,11 +15,12 @@ module.exports = async (req, res) => {
     bg_color,
   } = req.query;
   let info;
+  info.name = username;
 
   res.setHeader("Content-Type", "image/svg+xml");
   try {
     info = {name: "", message: "", repo: ""}
-    request({url: "https://api.github.com/users/" + username + "/events/public", headers: {"User-Agent": "request"}}, function(error, resp, body) {
+    await request({url: "https://api.github.com/users/" + username + "/events/public", headers: {"User-Agent": "request"}}, function(error, resp, body) {
       if (!error && resp.statusCode == 200) {
 
         var events = JSON.parse(body);
@@ -31,7 +32,6 @@ module.exports = async (req, res) => {
           }
         }
 
-        info.name = username;
         info.message = lastPushEvent.payload.commits[lastPushEvent.payload.commits.length - 1].message;
         info.repo = lastPushEvent.repo.name;
 
@@ -52,4 +52,5 @@ module.exports = async (req, res) => {
       bg_color,
     })
   );
+
 };

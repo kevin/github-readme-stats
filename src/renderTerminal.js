@@ -90,7 +90,9 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
       ${hide_border ? "" : border}
       
       <text x="25" y="35" class="text">${name}@github</text>
-      
+      <svg x="0" y="45">
+        ${infoItems.toString().replace(/\,/gm, "")}
+      </svg>
     </svg>
   `;
 

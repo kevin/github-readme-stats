@@ -25,12 +25,12 @@ const getStyles = ({
   textColor
 }) => {
   return `
-    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap');
+    /*@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap');*/
 
     .header {
       font-family: 'Fira Code', monospace;
       font-size: 18px;
-      fill: ${titleColor}; 
+      fill: ${titleColor};
       animation: fadeIn 0.8s ease-in-out forwards;
     }
     

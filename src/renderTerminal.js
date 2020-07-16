@@ -116,8 +116,8 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
       
       ${hide_border ? "" : border}
       
-      <text x="25" y="35" class="header">${name}@GitHub</text>
-      <text x="25" y="35" class="header">${message}</text>
+      <text x="25" y="35" class="header">${name}@github</text>
+      <text x="25" y="45" class="header">${message}</text>
     </svg>
   `;
 

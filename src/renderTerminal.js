@@ -1,4 +1,4 @@
-const { kFormatter, isValidHexColor } = require("./utils");
+const { isValidHexColor } = require("./utils");
 const getStyles = require("./getStyles");
 
 function kFormatter(num) {

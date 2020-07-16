@@ -28,7 +28,6 @@ const getStyles = ({
 
     .header {
       font-family: 'Fira Code', monospace;
-      src('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap')
       font-size: 18px;
       fill: ${titleColor};
       animation: fadeIn 0.8s ease-in-out forwards;

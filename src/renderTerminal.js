@@ -84,6 +84,7 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
   return `
     <svg width="852" height="${height}" viewBox="0 0 852 ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
       <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap');
         ${styles}
       </style>
       

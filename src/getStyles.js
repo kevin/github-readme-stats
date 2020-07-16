@@ -28,7 +28,9 @@ const getStyles = ({
     @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap');
 
     .header {
-      font: 600 18px 'Fira Code', monospace; fill: ${titleColor}; 
+      font-family: 'Fira Code', monospace;
+      font-size: 18px;
+      fill: ${titleColor}; 
       animation: fadeIn 0.8s ease-in-out forwards;
     }
     
@@ -38,10 +40,7 @@ const getStyles = ({
     }
     
     .bold { font-weight: 700 }
-    .star-icon { 
-      font: 600 18px 'Fira Code', monospace;
-    }
-    ${process.env.NODE_ENV === "test" ? "" : getAnimations()}
+
   `;
 };
 

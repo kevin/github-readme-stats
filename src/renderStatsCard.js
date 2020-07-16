@@ -26,7 +26,7 @@ const renderStatsCard = (info = {}, options = { languages: [] }) => {
   const textColor = (isValidHexColor(text_color) && `#${text_color}`) || "#333";
   const bgColor = (isValidHexColor(bg_color) && `#${bg_color}`) || "#FFFEFE";
 
-  const STATS = {
+  /*const STATS = {
     stars: {
       icon: "★",
       label: "Total Stars",
@@ -57,7 +57,7 @@ const renderStatsCard = (info = {}, options = { languages: [] }) => {
       value: contributedTo,
       id: "contribs",
     },
-  };
+  };*/
 
   /*const statItems = Object.keys(STATS)
     .filter((key) => !hide.includes(key))

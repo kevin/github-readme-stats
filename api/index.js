@@ -37,14 +37,13 @@ module.exports = async (req, res) => {
 
         info.message = lastPushEvent.payload.commits[lastPushEvent.payload.commits.length - 1].message;
         info.repo = lastPushEvent.repo.name;
-        
+
         res.send(
           renderTerminal(info, {
             languages: JSON.parse(languages || "[]"),
             hide_border,
             line_height,
             title_color,
-            icon_color,
             text_color,
             bg_color,
           })

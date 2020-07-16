@@ -22,17 +22,16 @@ const getAnimations = () => {
 
 const getStyles = ({
   titleColor,
-  textColor,
-  iconColor,
+  textColor
 }) => {
   return `
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap');
+
     .header {
-      font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif; fill: ${titleColor}; 
+      font: 600 18px 'Fira Code', monospace; fill: ${titleColor}; 
       animation: fadeIn 0.8s ease-in-out forwards;
     }
-    .text { 
-      font: 600 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: ${textColor};
-    }
+    
     .stagger {
       opacity: 0;
       animation: fadeIn 0.3s ease-in-out forwards;
@@ -40,7 +39,7 @@ const getStyles = ({
     
     .bold { font-weight: 700 }
     .star-icon { 
-      font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
+      font: 600 18px 'Fira Code', monospace;
     }
     ${process.env.NODE_ENV === "test" ? "" : getAnimations()}
   `;

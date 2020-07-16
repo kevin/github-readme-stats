@@ -34,6 +34,8 @@ module.exports = async (req, res) => {
         info.message = lastPushEvent.payload.commits[lastPushEvent.payload.commits.length - 1].message;
         info.repo = lastPushEvent.repo.name;
 
+      } else {
+        return res.send(renderError(err.message));
       }
     });
   } catch (err) {

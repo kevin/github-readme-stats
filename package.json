@@ -3,13 +3,9 @@
   "version": "1.0.0",
   "description": "A terminal for your GitHub profile",
   "main": "index.js",
-  "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch"
-  },
   "author": "Kevin",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^8.2.0"
+    "request": "^2.88.2"
   }
 }

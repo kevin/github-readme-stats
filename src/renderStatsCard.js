@@ -1,16 +1,12 @@
 const { kFormatter, isValidHexColor } = require("../src/utils");
 const getStyles = require("./getStyles");
 
-const renderStatsCard = (stats = {}, options = { languages: [] }) => {
+const renderStatsCard = (info = {}, options = { languages: [] }) => {
   const {
     name,
-    totalStars,
-    totalCommits,
-    totalIssues,
-    totalPRs,
-    contributedTo,
-    rank,
-  } = stats;
+    message,
+    repo
+  } = info;
   const {
     languages = [],
     hide_border = false,

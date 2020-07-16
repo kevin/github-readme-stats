@@ -54,7 +54,6 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
   };
 
   const infoItems = Object.keys(INFO)
-    .filter((key) => !hide.includes(key))
     .map((key, index) =>
       // create the text nodes, and pass index so that we can calculate the line spacing
       createTextNode({ ...INFO[key], index, lineHeight: lheight })

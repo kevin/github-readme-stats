@@ -68,8 +68,8 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
       data-testid="card-border"
       x="0.5"
       y="0.5"
-      width=calc(100% - 1px);
-      height=calc(100% - 1px);
+      width="calc(100% - 1px)"
+      height="calc(100% - 1px)"
       rx="4.5"
       fill="${bgColor}"
       stroke="#2f80ed"

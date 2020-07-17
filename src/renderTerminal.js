@@ -90,7 +90,7 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
       
       ${border ? "" : renderBorder}
       
-      <text x="25" y="35" class="text"><span style="color:${nameColor};"${name}</span>@github <span style="color:${promptColor}~ $</span></text>
+      <text x="25" y="35" class="text"><span style="color:${nameColor};">${name}</span>@github <span style="color:${promptColor};">~ $</span></text>
       <svg x="0" y="45">
         ${infoItems.toString().replace(/\,/gm, "")}
       </svg>

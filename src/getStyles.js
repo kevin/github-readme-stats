@@ -21,15 +21,14 @@ const getAnimations = () => {
 };
 
 const getStyles = ({
-  titleColor,
-  textColor
+  nameColor
 }) => {
   return `
 
     .text {
       font-family: 'Segoe UI', Ubuntu, Sans-Serif;
       font-size: 18px;
-      fill: ${titleColor};
+      fill: ${nameColor};
       animation: fadeIn 0.8s ease-in-out forwards;
     }
     

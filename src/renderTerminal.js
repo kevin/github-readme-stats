@@ -31,18 +31,22 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
   } = info;
   const {
     languages = [],
-    hide_border = false,
+    border = false,
     line_height = 25,
-    title_color,
-    text_color,
+    color1,
+    color2,
+    color3,
+    border_color,
     bg_color,
   } = options;
 
   const lheight = parseInt(line_height);
 
-  const titleColor =
-    (isValidHexColor(title_color) && `#${title_color}`) || "#FFF";
-  const textColor = (isValidHexColor(text_color) && `#${text_color}`) || "#FFF";
+  const colorNormal = (isValidHexColor(color1) && `#${color1}`) || "#FFF";
+  const nameColor =
+    (isValidHexColor(color2) && `#${color2}`) || "#FFF";
+  const promptColor = (isValidHexColor(color3) && `#${color3}`) || "#FFF";
+  const borderColor = (isValidHexColor(border_color) && `#${border_color}`) || "#FFF";
   const bgColor = (isValidHexColor(bg_color) && `#${bg_color}`) || "#000";
 
   const INFO = {
@@ -63,7 +67,7 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
   // but if rank circle is visible clamp the minimum height to `150`
   const height = 400;
 
-  const border = `
+  const renderBorder = `
     <rect 
       data-testid="card-border"
       x="0.5"
@@ -72,14 +76,11 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
       height="calc(100% - 1px)"
       rx="4.5"
       fill="${bgColor}"
-      stroke="#2f80ed"
+      stroke="${borderColor}"
     />
   `;
 
-  const styles = getStyles({
-    titleColor,
-    textColor
-  });
+  const styles = getStyles({colorNormal});
 
   return `
     <svg width="854" height="${height}" viewBox="0 0 854 ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -87,9 +88,9 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
         ${styles}
       </style>
       
-      ${hide_border ? "" : border}
+      ${border ? "" : renderBorder}
       
-      <text x="25" y="35" class="text">${name}@github</text>
+      <text x="25" y="35" class="text"><span style="color:${nameColor};"${name}</span>@github <span style="color:${promptColor}~ $</span></text>
       <svg x="0" y="45">
         ${infoItems.toString().replace(/\,/gm, "")}
       </svg>

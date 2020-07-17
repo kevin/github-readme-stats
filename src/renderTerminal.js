@@ -82,7 +82,7 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
   });
 
   return `
-    <svg width="854" height="${height}" viewBox="0 0 852 ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="854" height="${height}" viewBox="0 0 854 ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
       <style>
         ${styles}
       </style>

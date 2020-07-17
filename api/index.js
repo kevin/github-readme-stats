@@ -7,12 +7,10 @@ module.exports = async (req, res) => {
   const {
     username,
     languages,
-    border,
     line_height,
     color1,
     color2,
     color3,
-    border_color,
     bg_color,
   } = req.query;
   let info = {name: "", message: "", repo: ""};
@@ -42,12 +40,10 @@ module.exports = async (req, res) => {
         res.send(
           renderTerminal(info, {
             languages: JSON.parse(languages || "[]"),
-            border,
             line_height,
             color1,
             color2,
             color3,
-            border_color,
             bg_color,
           })
         );

@@ -31,12 +31,10 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
   } = info;
   const {
     languages = [],
-    border = false,
     line_height = 25,
     color1,
     color2,
     color3,
-    border_color,
     bg_color,
   } = options;
 
@@ -46,7 +44,6 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
   const nameColor =
     (isValidHexColor(color2) && `#${color2}`) || "#FFFFFF";
   const promptColor = (isValidHexColor(color3) && `#${color3}`) || "#FFFFFF";
-  const borderColor = (isValidHexColor(border_color) && `#${border_color}`) || "#FFFFFF";
   const bgColor = (isValidHexColor(bg_color) && `#${bg_color}`) || "#000000";
 
   const INFO = {
@@ -67,7 +64,7 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
   // but if rank circle is visible clamp the minimum height to `150`
   const height = 400;
 
-  const renderBorder = `
+  /*const renderBorder = `
     <rect 
       data-testid="card-border"
       x="0.5"
@@ -78,7 +75,7 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
       fill="${bgColor}"
       stroke="${borderColor}"
     />
-  `;
+  `;*/
 
   const styles = getStyles(colorNormal);
 
@@ -88,7 +85,7 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
         ${styles}
       </style>
       
-      ${border ? "" : renderBorder}
+      <rect data-testid="card-border" x="0.5" y="0.5" width="100%" height="100%" rx="4.5" fill="${bgColor}"/>
       
       <text x="25" y="35" class="text">${name}@github ~ $</text>
       <svg x="0" y="45">

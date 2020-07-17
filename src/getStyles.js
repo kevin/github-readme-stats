@@ -20,7 +20,7 @@ const getAnimations = () => {
   `;
 };
 
-const getStyles = (color) => {
+const getStyles = (color, nameColor, promptColor) => {
   return `
 
     .text {
@@ -29,7 +29,15 @@ const getStyles = (color) => {
       fill: ${color};
       animation: fadeIn 0.8s ease-in-out forwards;
     }
+
+    #name {
+      fill: ${nameColor};
+    }
     
+    #prompt {
+      fill: ${promptColor};
+    }
+
     .stagger {
       opacity: 0;
       animation: fadeIn 0.3s ease-in-out forwards;

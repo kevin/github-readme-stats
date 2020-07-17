@@ -31,11 +31,17 @@ const getStyles = (color, nameColor, promptColor) => {
     }
 
     #name {
+      font-family: 'Segoe UI', Ubuntu, Sans-Serif;
+      font-size: 18px;
       fill: ${nameColor};
+      animation: fadeIn 0.8s ease-in-out forwards;
     }
     
     #prompt {
+      font-family: 'Segoe UI', Ubuntu, Sans-Serif;
+      font-size: 18px;
       fill: ${promptColor};
+      animation: fadeIn 0.8s ease-in-out forwards;
     }
 
     .stagger {

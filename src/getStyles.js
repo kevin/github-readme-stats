@@ -27,7 +27,7 @@ const getStyles = ({
   return `
 
     .header {
-      font-family: 'Fira Code', monospace;
+      font-family: 'Segoe UI', Ubuntu, Sans-Serif;
       font-size: 18px;
       fill: ${titleColor};
       animation: fadeIn 0.8s ease-in-out forwards;

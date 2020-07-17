@@ -42,12 +42,12 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
 
   const lheight = parseInt(line_height);
 
-  const colorNormal = (isValidHexColor(color1) && `#${color1}`) || "#FFF";
+  const colorNormal = (isValidHexColor(color1) && `#${color1}`) || "#FFFFFF";
   const nameColor =
-    (isValidHexColor(color2) && `#${color2}`) || "#FFF";
-  const promptColor = (isValidHexColor(color3) && `#${color3}`) || "#FFF";
-  const borderColor = (isValidHexColor(border_color) && `#${border_color}`) || "#FFF";
-  const bgColor = (isValidHexColor(bg_color) && `#${bg_color}`) || "#000";
+    (isValidHexColor(color2) && `#${color2}`) || "#FFFFFF";
+  const promptColor = (isValidHexColor(color3) && `#${color3}`) || "#FFFFFF";
+  const borderColor = (isValidHexColor(border_color) && `#${border_color}`) || "#FFFFFF";
+  const bgColor = (isValidHexColor(bg_color) && `#${bg_color}`) || "#000000";
 
   const INFO = {
     latest: {
@@ -80,7 +80,7 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
     />
   `;
 
-  const styles = getStyles({colorNormal});
+  const styles = getStyles(colorNormal);
 
   return `
     <svg width="854" height="${height}" viewBox="0 0 854 ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -90,7 +90,7 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
       
       ${border ? "" : renderBorder}
       
-      <text x="25" y="35" class="text"><span style="color:${nameColor};">${name}</span>@github <span style="color:${promptColor};">~ $</span></text>
+      <text x="25" y="35" class="text"><span style="fill: ${nameColor};">${name}</span>@github <span style="fill: ${promptColor};">~ $</span></text>
       <svg x="0" y="45">
         ${infoItems.toString().replace(/\,/gm, "")}
       </svg>

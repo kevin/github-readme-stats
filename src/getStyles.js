@@ -20,7 +20,7 @@ const getAnimations = () => {
   `;
 };
 
-const getStyles = ({color}) => {
+const getStyles = (color) => {
   return `
 
     .text {

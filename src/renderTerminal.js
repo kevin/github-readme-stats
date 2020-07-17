@@ -41,8 +41,8 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
   const lheight = parseInt(line_height);
 
   const titleColor =
-    (isValidHexColor(title_color) && `#${title_color}`) || "#333";
-  const textColor = (isValidHexColor(text_color) && `#${text_color}`) || "#333";
+    (isValidHexColor(title_color) && `#${title_color}`) || "#FFF";
+  const textColor = (isValidHexColor(text_color) && `#${text_color}`) || "#FFF";
   const bgColor = (isValidHexColor(bg_color) && `#${bg_color}`) || "#000";
 
   const INFO = {

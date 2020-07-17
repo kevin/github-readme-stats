@@ -68,7 +68,7 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
       data-testid="card-border"
       x="0.5"
       y="0.5"
-      width="851"
+      width="853"
       height="99%"
       rx="4.5"
       fill="${bgColor}"
@@ -82,7 +82,7 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
   });
 
   return `
-    <svg width="852" height="${height}" viewBox="0 0 852 ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="854" height="${height}" viewBox="0 0 852 ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
       <style>
         ${styles}
       </style>

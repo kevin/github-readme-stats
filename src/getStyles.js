@@ -26,7 +26,7 @@ const getStyles = ({
 }) => {
   return `
 
-    .header {
+    .text {
       font-family: 'Segoe UI', Ubuntu, Sans-Serif;
       font-size: 18px;
       fill: ${titleColor};

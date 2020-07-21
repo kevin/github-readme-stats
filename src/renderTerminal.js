@@ -77,7 +77,7 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
       <text x="20" y="35" class="text"><tspan id="name">${name}</tspan>@github <tspan id="prompt">~ $</tspan> info</text>
       <svg x="0" y="45">
         ${FlexLayout({
-          items: statItems,
+          items: infoItems,
           gap: lheight,
           direction: "column",
         }).join("")}

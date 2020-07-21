@@ -5,7 +5,7 @@ const createTextNode = ({ label, value, id, index }) => {
   //const kValue = kFormatter(value); // this is only for numbers i dont need to use it
   const staggerDelay = (index + 3) * 150;
   return `
-    <g class="stagger" style="animation-delay: ${staggerDelay}ms" transform="translate(25, 0)">
+    <g class="stagger" style="animation-delay: ${staggerDelay}ms" transform="translate(20, 0)">
       <text class="text bold" y="12.5">${label}:</text>
       <text class="text" x="135" y="12.5" data-testid="${id}">${value}</text> 
     </g>
@@ -24,6 +24,7 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
     color1,
     color2,
     color3,
+    color4,
     bgcolor,
   } = options;
 
@@ -35,10 +36,13 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
   const colorPrompt = (isValidHexColor(color3) && `#${color3}`) || "#FFFFFF";
   const colorBG = (isValidHexColor(bgcolor) && `#${bgcolor}`) || "#000000";
 
+  const colorHighlight =
+    (isValidHexColor(color4) && `#${color4}`) || "#FFFFFF";
+
   const INFO = {
     latest: {
       label: "Latest activity",
-      value: message + ' in ' + repo,
+      value: '<tspan id="highlight">' + message + '</tspan> in ' + repo,
       id: "latestpush",
     }
   };
@@ -63,7 +67,7 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
     />
   `;*/
 
-  const styles = getStyles(colorNormal, colorName, colorPrompt);
+  const styles = getStyles(colorNormal, colorName, colorPrompt, colorHighlight);
 
   return `
     <svg width="854" height="${height}" viewBox="0 0 854 ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">

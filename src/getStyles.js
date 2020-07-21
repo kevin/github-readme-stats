@@ -20,7 +20,7 @@ const getAnimations = () => {
   `;
 };
 
-const getStyles = (color, nameColor, promptColor) => {
+const getStyles = (color, nameColor, promptColor, highlightColor) => {
   return `
 
     .text {
@@ -31,7 +31,11 @@ const getStyles = (color, nameColor, promptColor) => {
     }
 
     .bold {
-      font-weight: 120%;
+      font-weight: 110%;
+    }
+
+    .highlight {
+      fill: ${highlightColor}
     }
 
     #name {

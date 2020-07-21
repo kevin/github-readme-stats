@@ -7,19 +7,15 @@ function kFormatter(num) {
     : Math.sign(num) * Math.abs(num);
 }
 
-const createTextNode = ({ label, value, id, index, lineHeight }) => {
+const createTextNode = ({ label, value, id, index }) => {
   const kValue = kFormatter(value);
   const staggerDelay = (index + 3) * 150;
-  // manually calculating lineHeight based on index instead of using <tspan dy="" />
-  // to fix firefox layout bug
-  const lheight = lineHeight * (index + 1);
   return `
-    <text class="stagger" style="animation-delay: ${staggerDelay}ms" x="25" y="${lheight}">
-      <tspan dx="0" class="stat bold">
-       ${label}:
-      </tspan>
-      <tspan x="160" data-testid="${id}" class="stat">${kValue}</tspan>
-    </text>
+    <g class="stagger" style="animation-delay: ${staggerDelay}ms" transform="translate(25, 0)">
+      ${iconSvg}
+      <text class="stat bold" y="12.5">${label}:</text>
+      <text class="stat" x="135" y="12.5" data-testid="${id}">${kValue}</text>
+    </g>
   `;
 };
 
@@ -35,7 +31,7 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
     color1,
     color2,
     color3,
-    bg_color,
+    bgcolor,
   } = options;
 
   const lheight = parseInt(line_height);
@@ -44,7 +40,7 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
   const colorName =
     (isValidHexColor(color2) && `#${color2}`) || "#FFFFFF";
   const colorPrompt = (isValidHexColor(color3) && `#${color3}`) || "#FFFFFF";
-  const bgColor = (isValidHexColor(bg_color) && `#${bg_color}`) || "#000000";
+  const colorBG = (isValidHexColor(bgcolor) && `#${bgcolor}`) || "#000000";
 
   const INFO = {
     latest: {
@@ -57,11 +53,9 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
   const infoItems = Object.keys(INFO)
     .map((key, index) =>
       // create the text nodes, and pass index so that we can calculate the line spacing
-      createTextNode({ ...INFO[key], index, lineHeight: lheight })
+      createTextNode({ ...INFO[key], index})
     );
 
-  // Calculate the card height depending on how many items there are
-  // but if rank circle is visible clamp the minimum height to `150`
   const height = 400;
 
   /*const renderBorder = `
@@ -85,11 +79,15 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
         ${styles}
       </style>
       
-      <rect data-testid="card-border" x="0.5" y="0.5" width="100%" height="100%" rx="4.5" fill="${bgColor}"/>
+      <rect data-testid="card-border" x="0.5" y="0.5" width="100%" height="100%" rx="4.5" fill="${colorBG}"/>
       
-      <text x="20" y="35" class="text"><tspan id="name">${name}</tspan>@github <tspan id="prompt">~ $</tspan></text>
+      <text x="20" y="35" class="text"><tspan id="name">${name}</tspan>@github <tspan id="prompt">~ $</tspan> info</text>
       <svg x="0" y="45">
-        ${infoItems.toString().replace(/\,/gm, "")}
+        ${FlexLayout({
+          items: statItems,
+          gap: lheight,
+          direction: "column",
+        }).join("")}
       </svg>
     </svg>
   `;

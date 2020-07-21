@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
     color1,
     color2,
     color3,
-    bg_color,
+    bgcolor,
   } = req.query;
   let info = {name: "", message: "", repo: ""};
   info.name = username;
@@ -44,7 +44,7 @@ module.exports = async (req, res) => {
             color1,
             color2,
             color3,
-            bg_color,
+            bgcolor,
           })
         );
 

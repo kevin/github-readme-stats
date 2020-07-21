@@ -30,6 +30,10 @@ const getStyles = (color, nameColor, promptColor) => {
       animation: fadeIn 0.8s ease-in-out forwards;
     }
 
+    .bold {
+      font-weight: 120%;
+    }
+
     #name {
       fill: ${nameColor};
     }

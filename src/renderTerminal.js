@@ -6,8 +6,8 @@ const createTextNode = ({ label, value, id, index }) => {
   const staggerDelay = (index + 3) * 150;
   return `
     <g class="stagger" style="animation-delay: ${staggerDelay}ms" transform="translate(25, 0)">
-      <text class="stat text bold" y="12.5">${label}:</text>
-      <text class="stat text" x="135" y="12.5" data-testid="${id}">value</text> 
+      <text class="text bold" y="12.5">${label}:</text>
+      <text class="text" x="135" y="12.5" data-testid="${id}">${value}</text> 
     </g>
   `;
 };
@@ -37,7 +37,7 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
 
   const INFO = {
     latest: {
-      label: "Latest activity: ",
+      label: "Latest activity",
       value: message + ' in ' + repo,
       id: "latestpush",
     }

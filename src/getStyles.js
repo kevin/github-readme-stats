@@ -46,6 +46,15 @@ const getStyles = (color, nameColor, promptColor) => {
       opacity: 0;
       animation: fadeIn 0.3s ease-in-out forwards;
     }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
     
     .bold { font-weight: 700 }
 

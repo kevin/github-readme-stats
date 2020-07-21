@@ -87,7 +87,7 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
       
       <rect data-testid="card-border" x="0.5" y="0.5" width="100%" height="100%" rx="4.5" fill="${bgColor}"/>
       
-      <text x="20" y="35" class="text"><span id="name">${name}</span>@github <span id="prompt">~ $</span></text>
+      <text x="20" y="35" class="text"><tspan id="name">${name}</tspan>@github <tspan id="prompt">~ $</tspan></text>
       <svg x="0" y="45">
         ${infoItems.toString().replace(/\,/gm, "")}
       </svg>

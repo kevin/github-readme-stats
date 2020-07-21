@@ -41,9 +41,9 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
   const lheight = parseInt(line_height);
 
   const colorNormal = (isValidHexColor(color1) && `#${color1}`) || "#FFFFFF";
-  const nameColor =
+  const colorName =
     (isValidHexColor(color2) && `#${color2}`) || "#FFFFFF";
-  const promptColor = (isValidHexColor(color3) && `#${color3}`) || "#FFFFFF";
+  const colorPrompt = (isValidHexColor(color3) && `#${color3}`) || "#FFFFFF";
   const bgColor = (isValidHexColor(bg_color) && `#${bg_color}`) || "#000000";
 
   const INFO = {
@@ -77,7 +77,7 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
     />
   `;*/
 
-  const styles = getStyles(colorNormal);
+  const styles = getStyles(colorNormal, colorName, colorPrompt);
 
   return `
     <svg width="854" height="${height}" viewBox="0 0 854 ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">

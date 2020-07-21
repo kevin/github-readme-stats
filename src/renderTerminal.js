@@ -74,7 +74,7 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
       
       <rect data-testid="card-border" x="0.5" y="0.5" width="100%" height="100%" rx="4.5" fill="${colorBG}"/>
       
-      <text x="20" y="35" class="text"><tspan id="name">${name}</tspan>@github <tspan id="prompt">~ $</tspan> info</text>
+      <text x="20" y="35" class="text"><tspan id="name">${name}</tspan>@github <tspan id="prompt">~ $</tspan> info ${message}</text>
       <svg x="0" y="45">
         ${FlexLayout({
           items: infoItems,

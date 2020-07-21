@@ -6,7 +6,7 @@ const createTextNode = ({ label, value, index }) => {
   const staggerDelay = (index + 3) * 150;
   return `
     <g class="stagger" style="animation-delay: ${staggerDelay}ms" transform="translate(20, 0)">
-      <text class="text bold" y="12.5">${label} ${value}</text>
+      <text class="text" y="12.5"><tspan class="bold">${label}</tspan> ${value}</text>
     </g>
   `;
 };

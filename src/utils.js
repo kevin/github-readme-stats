@@ -25,4 +25,21 @@ function isValidHexColor(hexColor) {
   ).test(hexColor);
 }
 
-module.exports = { renderError, encodeHTML, isValidHexColor};
+function FlexLayout({ items, gap, direction }) {
+  // filter() for filtering out empty strings
+  return items.filter(Boolean).map((item, i) => {
+    let transform = `translate(${gap * i}, 0)`;
+    if (direction === "column") {
+      transform = `translate(0, ${gap * i})`;
+    }
+    return `<g transform="${transform}">${item}</g>`;
+  });
+}
+
+function kFormatter(num) {
+  return Math.abs(num) > 999
+    ? Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + "k"
+    : Math.sign(num) * Math.abs(num);
+}
+
+module.exports = { renderError, encodeHTML, isValidHexColor, FlexLayout, kFormatter};

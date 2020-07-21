@@ -1,11 +1,5 @@
-const { isValidHexColor } = require("./utils");
+const { isValidHexColor, FlexLayout, kFormatter } = require("./utils");
 const getStyles = require("./getStyles");
-
-function kFormatter(num) {
-  return Math.abs(num) > 999
-    ? Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + "k"
-    : Math.sign(num) * Math.abs(num);
-}
 
 const createTextNode = ({ label, value, id, index }) => {
   const kValue = kFormatter(value);
@@ -13,7 +7,7 @@ const createTextNode = ({ label, value, id, index }) => {
   return `
     <g class="stagger" style="animation-delay: ${staggerDelay}ms" transform="translate(25, 0)">
       <text class="stat bold" y="12.5">${label}:</text>
-      <text class="stat" x="135" y="12.5" data-testid="${id}">${kValue}</text>
+      <text class="stat" x="135" y="12.5" data-testid="${id}">${kValue}</text> 
     </g>
   `;
 };

@@ -24,14 +24,14 @@ const getStyles = (color, nameColor, promptColor, highlightColor) => {
   return `
 
     .text {
-      font-family: 'Segoe UI', Ubuntu, Sans-Serif;
+      font-family: "Lucida Console", Monaco, monospace;
       font-size: 18px;
       fill: ${color};
       animation: fadeIn 0.8s ease-in-out forwards;
     }
 
     .bold {
-      font-weight: 110%;
+      font-weight: 105%;
     }
 
     #highlight {

@@ -1,13 +1,12 @@
 const { isValidHexColor, FlexLayout, kFormatter } = require("./utils");
 const getStyles = require("./getStyles");
 
-const createTextNode = ({ label, value, id, index }) => {
+const createTextNode = ({ label, value, index }) => {
   //const kValue = kFormatter(value); // this is only for numbers i dont need to use it
   const staggerDelay = (index + 3) * 150;
   return `
     <g class="stagger" style="animation-delay: ${staggerDelay}ms" transform="translate(20, 0)">
-      <text class="text bold" y="12.5">${label}:</text>
-      <text class="text" x="135" y="12.5" data-testid="${id}">${value}</text> 
+      <text class="text bold" y="12.5">${label} ${value}</text>
     </g>
   `;
 };
@@ -41,9 +40,8 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
 
   const INFO = {
     latest: {
-      label: "Latest activity",
+      label: "Latest activity: ",
       value: '<tspan id="highlight">' + message + '</tspan> in ' + repo,
-      id: "latestpush",
     }
   };
 

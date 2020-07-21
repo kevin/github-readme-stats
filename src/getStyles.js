@@ -34,7 +34,7 @@ const getStyles = (color, nameColor, promptColor, highlightColor) => {
       font-weight: 110%;
     }
 
-    .highlight {
+    #highlight {
       fill: ${highlightColor}
     }
 

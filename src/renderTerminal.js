@@ -2,12 +2,12 @@ const { isValidHexColor, FlexLayout, kFormatter } = require("./utils");
 const getStyles = require("./getStyles");
 
 const createTextNode = ({ label, value, id, index }) => {
-  const kValue = kFormatter(value);
+  //const kValue = kFormatter(value); // this is only for numbers i dont need to use it
   const staggerDelay = (index + 3) * 150;
   return `
     <g class="stagger" style="animation-delay: ${staggerDelay}ms" transform="translate(25, 0)">
       <text class="stat text bold" y="12.5">${label}:</text>
-      <text class="stat text" x="135" y="12.5" data-testid="${id}">${kValue}</text> 
+      <text class="stat text" x="135" y="12.5" data-testid="${id}">value</text> 
     </g>
   `;
 };
@@ -45,7 +45,6 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
 
   const infoItems = Object.keys(INFO)
     .map((key, index) =>
-      // create the text nodes, and pass index so that we can calculate the line spacing
       createTextNode({ ...INFO[key], index})
     );
 
@@ -74,7 +73,7 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
       
       <rect data-testid="card-border" x="0.5" y="0.5" width="100%" height="100%" rx="4.5" fill="${colorBG}"/>
       
-      <text x="20" y="35" class="text"><tspan id="name">${name}</tspan>@github <tspan id="prompt">~ $</tspan> info ${message}</text>
+      <text x="20" y="35" class="text"><tspan id="name">${name}</tspan>@github <tspan id="prompt">~ $</tspan> info</text>
       <svg x="0" y="45">
         ${FlexLayout({
           items: infoItems,

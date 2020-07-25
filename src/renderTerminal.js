@@ -44,8 +44,8 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
       value: '<tspan id="highlight">' + message + '</tspan> in ' + repo
     },
     newprompt: {
-      label: '<tspan id="name">${name}</tspan>@github <tspan id="prompt">~ $</tspan> ',
-      value: '<tspan class="blink" style="font-size: 16px; position: relative; bottom: 2px;">█</tspan>'
+      label: '<tspan id="name">' + name + '</tspan>@github <tspan id="prompt">~ $</tspan> ',
+      value: '<tspan class="blink">█</tspan>'
     }
   };
 

@@ -25,7 +25,8 @@ const getStyles = (color, nameColor, promptColor, highlightColor) => {
     }
 
     .blink {
-      @include animation(cursor-blink 1.25s steps(1) infinite);
+      animation: blink-animation 1s steps(5, start) infinite;
+      -webkit-animation: blink-animation 1s steps(5, start) infinite;
     }
 
     .stagger {
@@ -42,15 +43,14 @@ const getStyles = (color, nameColor, promptColor, highlightColor) => {
       }
     }
 
-    @include keyframes(cursor-blink) {
-      0% {
-        opacity: 0;
+    @keyframes blink-animation {
+      to {
+        visibility: hidden;
       }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
+    }
+    @-webkit-keyframes blink-animation {
+      to {
+        visibility: hidden;
       }
     }
     

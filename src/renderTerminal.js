@@ -82,6 +82,7 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
           gap: lheight,
           direction: "column",
         }).join("")}
+        <text x="20" y="35" class="text"><tspan id="name">${name}</tspan>@github <tspan id="prompt">~ $</tspan> <tspan class="blink">█</tspan></text>
       </svg>
     </svg>
   `;

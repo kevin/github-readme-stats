@@ -44,7 +44,7 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
       value: '<tspan id="highlight">' + message + '</tspan> in ' + repo
     },
     newprompt: {
-      label: '[<tspan id="name">' + name + '</tspan><tspan id="prompt">@github</tspan> <tspan id="highlight">@~</tspan>]$ ',
+      label: '[<tspan id="name">' + name + '</tspan><tspan id="prompt">@github</tspan> <tspan id="highlight">~</tspan>]$ ',
       value: '<tspan class="blink">█</tspan>'
     }
   };
@@ -79,7 +79,7 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
       
       <rect data-testid="card-border" x="0.5" y="0.5" width="100%" height="100%" rx="4.5" fill="${colorBG}"/>
       
-      <text x="20" y="35" class="text">[<tspan id="name">${name}</tspan><tspan id="prompt">@github</tspan> <tspan id="highlight">@~</tspan>]$ info</text>
+      <text x="20" y="35" class="text">[<tspan id="name">${name}</tspan><tspan id="prompt">@github</tspan> <tspan id="highlight">~</tspan>]$ info</text>
       <svg x="0" y="45">
         ${FlexLayout({
           items: infoItems,

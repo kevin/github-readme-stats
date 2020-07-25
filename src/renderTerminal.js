@@ -6,7 +6,7 @@ const createTextNode = ({ label, value, index }) => {
   const staggerDelay = (index + 5) * 150;
   return `
     <g class="stagger" style="animation-delay: ${staggerDelay}ms" transform="translate(20, 0)">
-      <text class="text" y="12.5"><tspan class="bold">${label}</tspan> ${value}</text>
+      <text class="text" y="12.5">${label} ${value}</text>
     </g>
   `;
 };
@@ -40,7 +40,7 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
 
   const INFO = {
     latest: {
-      label: "Latest activity: ",
+      label: '<tspan class="bold">Latest activity: </tspan>',
       value: '<tspan id="highlight">' + message + '</tspan> in ' + repo
     },
     newprompt: {

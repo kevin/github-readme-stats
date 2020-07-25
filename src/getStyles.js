@@ -25,8 +25,8 @@ const getStyles = (color, nameColor, promptColor, highlightColor) => {
     }
 
     .blink {
-      animation: blink-animation 1s steps(5, start) infinite;
-      -webkit-animation: blink-animation 1s steps(5, start) infinite;
+      animation: blink-animation 1s steps(3, start) infinite;
+      -webkit-animation: blink-animation 1s steps(3, start) infinite;
     }
 
     .stagger {

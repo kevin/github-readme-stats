@@ -27,12 +27,9 @@ const getStyles = (color, nameColor, promptColor, highlightColor) => {
     .blink {
       font-size: 16px;
       position: relative;
-      bottom: 1px;
-      -webkit-animation: 1s blink step-end infinite;
-    	-moz-animation: 1s blink step-end infinite;
-    	-ms-animation: 1s blink step-end infinite;
-    	-o-animation: 1s blink step-end infinite;
-    	animation: 1s blink step-end infinite;
+      bottom: 2px;
+      animation: blink-animation 1s steps(2, start) infinite;
+      -webkit-animation: blink-animation 1s steps(2, start) infinite;
     }
 
     .stagger {
@@ -49,48 +46,14 @@ const getStyles = (color, nameColor, promptColor, highlightColor) => {
       }
     }
 
-    @keyframes "blink" {
-      from, to {
-        color: transparent;
-      }
-      50% {
-        color: black;
+    @keyframes blink-animation {
+      to {
+        visibility: hidden;
       }
     }
-    
-    @-moz-keyframes blink {
-      from, to {
-        color: transparent;
-      }
-      50% {
-        color: black;
-      }
-    }
-    
-    @-webkit-keyframes "blink" {
-      from, to {
-        color: transparent;
-      }
-      50% {
-        color: black;
-      }
-    }
-    
-    @-ms-keyframes "blink" {
-      from, to {
-        color: transparent;
-      }
-      50% {
-        color: black;
-      }
-    }
-    
-    @-o-keyframes "blink" {
-      from, to {
-        color: transparent;
-      }
-      50% {
-        color: black;
+    @-webkit-keyframes blink-animation {
+      to {
+        visibility: hidden;
       }
     }
     

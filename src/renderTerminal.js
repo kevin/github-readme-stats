@@ -3,7 +3,7 @@ const getStyles = require("./getStyles");
 
 const createTextNode = ({ label, value, index }) => {
   //const kValue = kFormatter(value); // this is only for numbers i dont need to use it
-  const staggerDelay = (index + 3) * 150;
+  const staggerDelay = (index + 5) * 150;
   return `
     <g class="stagger" style="animation-delay: ${staggerDelay}ms" transform="translate(20, 0)">
       <text class="text" y="12.5"><tspan class="bold">${label}</tspan> ${value}</text>
@@ -44,8 +44,8 @@ const renderTerminal = (info = {}, options = { languages: [] }) => {
       value: '<tspan id="highlight">' + message + '</tspan> in ' + repo
     },
     newprompt: {
-      label: '<tspan id="name">${name}</tspan>@github <tspan id="prompt">~ $</tspan> </tspan>',
-      value: '<tspan class="blink">█'
+      label: '<tspan id="name">${name}</tspan>@github <tspan id="prompt">~ $</tspan> ',
+      value: '<tspan class="blink">█</tspan>'
     }
   };
 
